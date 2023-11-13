@@ -15,7 +15,7 @@ public class Output {
 
         try (BufferedReader csvReader = new BufferedReader(new FileReader("data/points_of_interest.csv"))) {
             String line;
-            csvReader.readLine(); // Skip the header line
+            csvReader.readLine();
             while ((line = csvReader.readLine()) != null) {
                 String[] data = line.split(",");
                 String cityName = data[0];
@@ -38,19 +38,19 @@ public class Output {
         }
 
         for (PointOfInterest poi : pointsOfInterest) {
-            outputList.add("City: " + poi.getCity() + " Name: " + poi.getName() + " Description: " + poi.getDescr() + " Rating: " + poi.getRating());
+            outputList.add("City: " + poi.getCity() + " Category: " + poi.getCategory() + " Name: " + poi.getName() + " Description: " + poi.getDescr() + " Rating: " + poi.getRating());
         }
 
         return outputList;
     }
-    public List<String> runs() {
+    public List<String> run_rating() {
         List<PointOfInterest> pointsOfInterest = new ArrayList<>();
         List<Category> categories = new ArrayList<>();
         List<String> outputList = new ArrayList<>();
 
         try (BufferedReader csvReader = new BufferedReader(new FileReader("data/points_of_interest.csv"))) {
             String line;
-            csvReader.readLine(); // Skip the header line
+            csvReader.readLine();
             while ((line = csvReader.readLine()) != null) {
                 String[] data = line.split(",");
                 String cityName = data[0];
@@ -73,12 +73,123 @@ public class Output {
         }
 
         Sort sorter = new Sort(pointsOfInterest, categories);
-        List<PointOfInterest> sortedPoints = sorter.compareByReviews();
+        List<PointOfInterest> sortedPoints = sorter.compareByRating();
 
         for (PointOfInterest poi : sortedPoints) {
             outputList.add("City: " + poi.getCity() + " Name: " + poi.getName() + " Description: " + poi.getDescr() + " Rating: " + poi.getRating());
         }
 
+        return outputList;
+    }
+    public List<String> run_name(){
+        List<PointOfInterest> pointsOfInterest = new ArrayList<>();
+        List<Category> categories = new ArrayList<>();
+        List<String> outputList = new ArrayList<>();
+
+        try (BufferedReader csvReader = new BufferedReader(new FileReader("data/points_of_interest.csv"))) {
+            String line;
+            csvReader.readLine();
+            while ((line = csvReader.readLine()) != null) {
+                String[] data = line.split(",");
+                String cityName = data[0];
+                String categoryName = data[1];
+                String POIName = data[2];
+                String POIDesc = data[3];
+                double POIRating = Double.parseDouble(data[4]);
+
+                City city = new City(cityName);
+                Category category = new Category(categoryName);
+                PointOfInterest poi = new PointOfInterest(POIName, POIDesc, POIRating);
+                poi.setCity(city);
+                poi.setCategory(category);
+
+                pointsOfInterest.add(poi);
+                categories.add(category);
+            }
+        } catch (IOException | NumberFormatException e) {
+            e.printStackTrace();
+        }
+
+        Sort sorter = new Sort(pointsOfInterest, categories);
+        List<PointOfInterest> sortedPoints = sorter.compareByName();
+
+        for (PointOfInterest poi : sortedPoints) {
+            outputList.add("City: " + poi.getCity() + " Name: " + poi.getName() + " Description: " + poi.getDescr() + " Rating: " + poi.getRating());
+        }
+        return outputList;
+    }
+    public List<String> run_city(){
+        List<PointOfInterest> pointsOfInterest = new ArrayList<>();
+        List<Category> categories = new ArrayList<>();
+        List<String> outputList = new ArrayList<>();
+
+        try (BufferedReader csvReader = new BufferedReader(new FileReader("data/points_of_interest.csv"))) {
+            String line;
+            csvReader.readLine();
+            while ((line = csvReader.readLine()) != null) {
+                String[] data = line.split(",");
+                String cityName = data[0];
+                String categoryName = data[1];
+                String POIName = data[2];
+                String POIDesc = data[3];
+                double POIRating = Double.parseDouble(data[4]);
+
+                City city = new City(cityName);
+                Category category = new Category(categoryName);
+                PointOfInterest poi = new PointOfInterest(POIName, POIDesc, POIRating);
+                poi.setCity(city);
+                poi.setCategory(category);
+
+                pointsOfInterest.add(poi);
+                categories.add(category);
+            }
+        } catch (IOException | NumberFormatException e) {
+            e.printStackTrace();
+        }
+
+        Sort sorter = new Sort(pointsOfInterest, categories);
+        List<PointOfInterest> sortedPoints = sorter.compareByCity();
+
+        for (PointOfInterest poi : sortedPoints) {
+            outputList.add("City: " + poi.getCity() + " Name: " + poi.getName() + " Description: " + poi.getDescr() + " Rating: " + poi.getRating());
+        }
+        return outputList;
+    }
+    public List<String> run_category(){
+        List<PointOfInterest> pointsOfInterest = new ArrayList<>();
+        List<Category> categories = new ArrayList<>();
+        List<String> outputList = new ArrayList<>();
+
+        try (BufferedReader csvReader = new BufferedReader(new FileReader("data/points_of_interest.csv"))) {
+            String line;
+            csvReader.readLine();
+            while ((line = csvReader.readLine()) != null) {
+                String[] data = line.split(",");
+                String cityName = data[0];
+                String categoryName = data[1];
+                String POIName = data[2];
+                String POIDesc = data[3];
+                double POIRating = Double.parseDouble(data[4]);
+
+                City city = new City(cityName);
+                Category category = new Category(categoryName);
+                PointOfInterest poi = new PointOfInterest(POIName, POIDesc, POIRating);
+                poi.setCity(city);
+                poi.setCategory(category);
+
+                pointsOfInterest.add(poi);
+                categories.add(category);
+            }
+        } catch (IOException | NumberFormatException e) {
+            e.printStackTrace();
+        }
+
+        Sort sorter = new Sort(pointsOfInterest, categories);
+        List<PointOfInterest> sortedPoints = sorter.compareByCategory();
+
+        for (PointOfInterest poi : sortedPoints) {
+            outputList.add("City: " + poi.getCity() + "Category: " + poi.getCategory() + " Name: " + poi.getName() + " Description: " + poi.getDescr() + " Rating: " + poi.getRating());
+        }
         return outputList;
     }
 }

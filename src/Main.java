@@ -12,7 +12,7 @@ public class Main {
 //        Input input = new Input();
 //        input.run();
         Output output = new Output();
-        List<String> result = output.run();
+        List<String> result = output.run_city();
         for (String outputLine : result) {
             System.out.println(outputLine);
         }
