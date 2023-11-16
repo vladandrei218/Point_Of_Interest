@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -57,40 +58,76 @@ public class Menu {
                                     System.out.println(outputLine);
                                 }
                                 System.out.println("Press 9 to go back");
-                                int gbCase3 = scanner_ins.nextInt();
-                                if (gbCase3 == 9) {
-                                    break;
+                                int gbCase3 = 0;
+                                while (gbCase3 != 9) {
+                                    try {
+                                        gbCase3 = scanner.nextInt();
+                                        if(gbCase3 != 9){
+                                            System.out.println("Invalid option. Please press 9 to go back.");
+                                        }
+                                    } catch (InputMismatchException e) {
+                                        System.out.println("Invalid input. Please press 9 to go back.");
+                                        scanner.next();
+                                    }
                                 }
+                                break;
                             case 2:
                                 List<String> resultCategory = output.run_category();
                                 for (String outputLine : resultCategory) {
                                     System.out.println(outputLine);
                                 }
                                 System.out.println("Press 9 to go back");
-                                int gbCase4 = scanner_ins.nextInt();
-                                if (gbCase4 == 9) {
-                                    break;
+                                int gbCase4 = 0;
+                                while (gbCase4 != 9) {
+                                    try {
+                                        gbCase4 = scanner.nextInt();
+                                        if(gbCase4 != 9){
+                                            System.out.println("Invalid option. Please press 9 to go back.");
+                                        }
+                                    } catch (InputMismatchException e) {
+                                        System.out.println("Invalid input. Please press 9 to go back.");
+                                        scanner.next();
+                                    }
                                 }
+                                break;
                             case 3:
                                 List<String> resultRating = output.run_rating();
                                 for (String outputLine : resultRating) {
                                     System.out.println(outputLine);
                                 }
                                 System.out.println("Press 9 to go back");
-                                int gbCase5 = scanner_ins.nextInt();
-                                if (gbCase5 == 9) {
-                                    break;
+                                int gbCase5 = 0;
+                                while (gbCase5 != 9) {
+                                    try {
+                                        gbCase5 = scanner.nextInt();
+                                        if(gbCase5 != 9){
+                                            System.out.println("Invalid option. Please press 9 to go back.");
+                                        }
+                                    } catch (InputMismatchException e) {
+                                        System.out.println("Invalid input. Please press 9 to go back.");
+                                        scanner.next();
+                                    }
                                 }
+                                break;
                             case 4:
                                 List<String> resultCity = output.run_city();
                                 for (String outputLine : resultCity) {
                                     System.out.println(outputLine);
                                 }
                                 System.out.println("Press 9 to go back");
-                                int gbCase6 = scanner_ins.nextInt();
-                                if (gbCase6 == 9) {
-                                    break;
+                                int gbCase6 = 0;
+                                while (gbCase6 != 9) {
+                                    try {
+                                        gbCase6 = scanner.nextInt();
+                                        if(gbCase6 != 9){
+                                            System.out.println("Invalid option. Please press 9 to go back.");
+                                        }
+                                    } catch (InputMismatchException e) {
+                                        System.out.println("Invalid input. Please press 9 to go back.");
+                                        scanner.next();
+                                    }
                                 }
+                                break;
                             case 9:
                                 gbCase7 = 9;
                                 break;
@@ -109,17 +146,18 @@ public class Menu {
                 case 4:
                     while (true) {
                         System.out.println("Please select an option:");
-                        System.out.println("1. Search by city");
-                        System.out.println("2. Search by category");
-                        System.out.println("3. Search by name");
-                        System.out.println("4. Search by rating");
+                        System.out.println("1. Search anything");
+                        System.out.println("2. Search a city");
+                        System.out.println("3. Search a category");
+                        System.out.println("4. Search a Point Of Interest");
+                        System.out.println("5. Search by rating");
                         System.out.println("9. Go back");
                         System.out.println("0. Exit");
                         int gbCase7 = 0;
                         Scanner scanner_sea = new Scanner(System.in);
                         int opt = scanner_sea.nextInt();
                         switch (opt) {
-                            case 3:
+                            case 4:
                                 System.out.println("Enter the point of interest name you want to search for: ");
                                 List<String> searchName = output.search_name();
                                 for (String outputLine : searchName) {
@@ -129,11 +167,20 @@ public class Menu {
                                     System.out.println("No results found");
                                 }
                                 System.out.println("Press 9 to go back");
-                                int gbCase3 = scanner_sea.nextInt();
-                                if (gbCase3 == 9) {
-                                    break;
+                                int gbCase3 = 0;
+                                while (gbCase3 != 9) {
+                                    try {
+                                        gbCase3 = scanner.nextInt();
+                                        if(gbCase3 != 9){
+                                            System.out.println("Invalid option. Please press 9 to go back.");
+                                        }
+                                    } catch (InputMismatchException e) {
+                                        System.out.println("Invalid input. Please press 9 to go back.");
+                                        scanner.next();
+                                    }
                                 }
-                            case 2:
+                                break;
+                            case 3:
                                 System.out.println("Enter the category you want to search for: ");
                                 List<String> searchCategory = output.search_category();
                                 for (String outputLine : searchCategory) {
@@ -143,11 +190,20 @@ public class Menu {
                                     System.out.println("No results found");
                                 }
                                 System.out.println("Press 9 to go back");
-                                int gbCase4 = scanner_sea.nextInt();
-                                if (gbCase4 == 9) {
-                                    break;
+                                int gbCase4 = 0;
+                                while (gbCase4 != 9) {
+                                    try {
+                                        gbCase4 = scanner.nextInt();
+                                        if(gbCase4 != 9){
+                                            System.out.println("Invalid option. Please press 9 to go back.");
+                                        }
+                                    } catch (InputMismatchException e) {
+                                        System.out.println("Invalid input. Please press 9 to go back.");
+                                        scanner.next();
+                                    }
                                 }
-                            case 4:
+                                break;
+                            case 5:
                                 System.out.println("Enter the rating that you want to search higher than: ");
                                 List<String> searchRating = output.search_rating();
                                 for (String outputLine : searchRating) {
@@ -157,11 +213,20 @@ public class Menu {
                                     System.out.println("No results found");
                                 }
                                 System.out.println("Press 9 to go back");
-                                int gbCase5 = scanner_sea.nextInt();
-                                if (gbCase5 == 9) {
-                                    break;
+                                int gbCase5 = 0;
+                                while (gbCase5 != 9) {
+                                    try {
+                                        gbCase5 = scanner.nextInt();
+                                        if(gbCase5 != 9){
+                                            System.out.println("Invalid option. Please press 9 to go back.");
+                                        }
+                                    } catch (InputMismatchException e) {
+                                        System.out.println("Invalid input. Please press 9 to go back.");
+                                        scanner.next();
+                                    }
                                 }
-                            case 1:
+                                break;
+                            case 2:
                                 System.out.println("Enter the city you want to search for: ");
                                 List<String> searchCity = output.search_city();
                                 for (String outputLine : searchCity) {
@@ -171,10 +236,42 @@ public class Menu {
                                     System.out.println("No results found");
                                 }
                                 System.out.println("Press 9 to go back");
-                                int gbCase6 = scanner_sea.nextInt();
-                                if (gbCase6 == 9) {
-                                    break;
+                                int gbCase6 = 0;
+                                while (gbCase6 != 9) {
+                                    try {
+                                        gbCase6 = scanner.nextInt();
+                                        if(gbCase6 != 9){
+                                            System.out.println("Invalid option. Please press 9 to go back.");
+                                        }
+                                    } catch (InputMismatchException e) {
+                                        System.out.println("Invalid input. Please press 9 to go back.");
+                                        scanner.next();
+                                    }
                                 }
+                                break;
+                            case 1:
+                                System.out.println("Enter what you want to search for: ");
+                                List<String> search = output.search();
+                                for (String outputLine : search) {
+                                    System.out.println(outputLine);
+                                }
+                                if(search.isEmpty()){
+                                    System.out.println("No results found");
+                                }
+                                System.out.println("Press 9 to go back");
+                                int gbCase8 = 0;
+                                while (gbCase8 != 9) {
+                                    try {
+                                        gbCase8 = scanner.nextInt();
+                                        if(gbCase8 != 9){
+                                            System.out.println("Invalid option. Please press 9 to go back.");
+                                        }
+                                    } catch (InputMismatchException e) {
+                                        System.out.println("Invalid input. Please press 9 to go back.");
+                                        scanner.next();
+                                    }
+                                }
+                                break;
                             case 9:
                                 gbCase7 = 9;
                                 break;
