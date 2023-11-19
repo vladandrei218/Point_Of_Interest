@@ -2,9 +2,9 @@ import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
-public class Menu {
-    Input input = new Input();
-    Output output = new Output();
+public class Menu_2 {
+    Input_2 input = new Input_2();
+    Output_2 output = new Output_2();
 
     public void run() {
         System.out.println("Welcome to the City Explorer!");

@@ -5,12 +5,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Output {
+public class Output_2 {
     private List<PointOfInterest> pointsOfInterest;
-    public Output(List<PointOfInterest> pointsOfInterest) {
+    public Output_2(List<PointOfInterest> pointsOfInterest) {
         this.pointsOfInterest = pointsOfInterest;
     }
-    public Output(){
+    public Output_2(){
 
     }
     public List<String> run(){
@@ -18,7 +18,7 @@ public class Output {
         List<Category> categories = new ArrayList<>();
         List<String> outputList = new ArrayList<>();
 
-        try (BufferedReader csvReader = new BufferedReader(new FileReader("data/points_of_interest.csv"))) {
+        try (BufferedReader csvReader = new BufferedReader(new FileReader("data/outside.csv"))) {
             String line;
             csvReader.readLine();
             while ((line = csvReader.readLine()) != null) {
@@ -52,7 +52,7 @@ public class Output {
         List<Category> categories = new ArrayList<>();
         List<String> outputList = new ArrayList<>();
 
-        try (BufferedReader csvReader = new BufferedReader(new FileReader("data/points_of_interest.csv"))) {
+        try (BufferedReader csvReader = new BufferedReader(new FileReader("data/outside.csv"))) {
             String line;
             csvReader.readLine();
             while ((line = csvReader.readLine()) != null) {
@@ -90,7 +90,7 @@ public class Output {
         List<Category> categories = new ArrayList<>();
         List<String> outputList = new ArrayList<>();
 
-        try (BufferedReader csvReader = new BufferedReader(new FileReader("data/points_of_interest.csv"))) {
+        try (BufferedReader csvReader = new BufferedReader(new FileReader("data/outside.csv"))) {
             String line;
             csvReader.readLine();
             while ((line = csvReader.readLine()) != null) {
@@ -127,7 +127,7 @@ public class Output {
         List<Category> categories = new ArrayList<>();
         List<String> outputList = new ArrayList<>();
 
-        try (BufferedReader csvReader = new BufferedReader(new FileReader("data/points_of_interest.csv"))) {
+        try (BufferedReader csvReader = new BufferedReader(new FileReader("data/outside.csv"))) {
             String line;
             csvReader.readLine();
             while ((line = csvReader.readLine()) != null) {
@@ -164,7 +164,7 @@ public class Output {
         List<Category> categories = new ArrayList<>();
         List<String> outputList = new ArrayList<>();
 
-        try (BufferedReader csvReader = new BufferedReader(new FileReader("data/points_of_interest.csv"))) {
+        try (BufferedReader csvReader = new BufferedReader(new FileReader("data/outside.csv"))) {
             String line;
             csvReader.readLine();
             while ((line = csvReader.readLine()) != null) {
@@ -203,7 +203,7 @@ public class Output {
         Scanner scanner = new Scanner(System.in);
         String citySearch = scanner.nextLine();
 
-        try (BufferedReader csvReader = new BufferedReader(new FileReader("data/points_of_interest.csv"))) {
+        try (BufferedReader csvReader = new BufferedReader(new FileReader("data/outside.csv"))) {
             String line;
             csvReader.readLine();
             while ((line = csvReader.readLine()) != null) {
@@ -240,7 +240,7 @@ public class Output {
         Scanner scanner = new Scanner(System.in);
         String citySearch = scanner.nextLine();
 
-        try (BufferedReader csvReader = new BufferedReader(new FileReader("data/points_of_interest.csv"))) {
+        try (BufferedReader csvReader = new BufferedReader(new FileReader("data/outside.csv"))) {
             String line;
             csvReader.readLine();
             while ((line = csvReader.readLine()) != null) {
@@ -277,7 +277,7 @@ public class Output {
         Scanner scanner = new Scanner(System.in);
         String citySearch = scanner.nextLine();
 
-        try (BufferedReader csvReader = new BufferedReader(new FileReader("data/points_of_interest.csv"))) {
+        try (BufferedReader csvReader = new BufferedReader(new FileReader("data/outside.csv"))) {
             String line;
             csvReader.readLine();
             while ((line = csvReader.readLine()) != null) {
@@ -314,7 +314,7 @@ public class Output {
         Scanner scanner = new Scanner(System.in);
         int rating = Integer.parseInt(scanner.nextLine());
 
-        try (BufferedReader csvReader = new BufferedReader(new FileReader("data/points_of_interest.csv"))) {
+        try (BufferedReader csvReader = new BufferedReader(new FileReader("data/outside.csv"))) {
             String line;
             csvReader.readLine();
             while ((line = csvReader.readLine()) != null) {
@@ -351,7 +351,7 @@ public class Output {
         Scanner scanner = new Scanner(System.in);
         String Search = scanner.nextLine();
 
-        try (BufferedReader csvReader = new BufferedReader(new FileReader("data/points_of_interest.csv"))) {
+        try (BufferedReader csvReader = new BufferedReader(new FileReader("data/outside.csv"))) {
             String line;
             csvReader.readLine();
             while ((line = csvReader.readLine()) != null) {

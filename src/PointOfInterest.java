@@ -1,11 +1,12 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class PointOfInterest implements  Searchable, Comparable<PointOfInterest>{
+public class PointOfInterest implements  Searchable, Comparable<PointOfInterest>, Reviewable {
     private String name,description;
     private double rating;
     private City city;
     private Category category;
+    private List<Review> reviews;
     public PointOfInterest(String id, String description, double rating){
         this.name=id;
         this.description=description;
@@ -43,9 +44,25 @@ public class PointOfInterest implements  Searchable, Comparable<PointOfInterest>
         }
         return searchResults;
     }
-
     @Override
     public int compareTo(PointOfInterest p) {
         return Double.compare(this.rating, p.rating);
+    }
+    @Override
+    public void addReview(Review review) {
+        if (reviews == null) {
+            reviews = new ArrayList<>();
+        }
+        reviews.add(review);
+    }
+    @Override
+    public void printReviews() {
+        if (reviews == null || reviews.isEmpty()) {
+            System.out.println("No reviews available.");
+        } else {
+            for (Review review : reviews) {
+                System.out.println(review.getReviewer() + " Rating: " + review.getReviewRating() + " Review: " + review.getReview());
+            }
+        }
     }
 }
